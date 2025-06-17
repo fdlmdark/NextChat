@@ -47,7 +47,7 @@ export const DEFAULT_CONFIG = {
   fontFamily: "",
   theme: Theme.Auto as Theme,
   tightBorder: !!config?.isApp,
-  sendPreviewBubble: true,
+  sendPreviewBubble: false,
   enableAutoGenerateTitle: true,
   sidebarWidth: DEFAULT_SIDEBAR_WIDTH,
 
@@ -57,8 +57,8 @@ export const DEFAULT_CONFIG = {
 
   disablePromptHint: false,
 
-  dontShowMaskSplashScreen: false, // dont show splash screen when create chat
-  hideBuiltinMasks: false, // dont add builtin masks
+  dontShowMaskSplashScreen: true, // dont show splash screen when create chat
+  hideBuiltinMasks: true, // dont add builtin masks
 
   customModels: "",
   models: DEFAULT_MODELS as any as LLMModel[],
