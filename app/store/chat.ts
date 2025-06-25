@@ -27,6 +27,7 @@ import {
   ServiceProvider,
   StoreKey,
   SUMMARIZE_MODEL,
+  SILICONFLOW_SUMMARIZE_MODEL,
 } from "../constant";
 import Locale, { getLang } from "../locales";
 import { prettyObject } from "../utils/format";
@@ -145,6 +146,9 @@ function getSummarizeModel(
   if (currentModel.startsWith("gemini")) {
     return [GEMINI_SUMMARIZE_MODEL, ServiceProvider.Google];
   } else if (currentModel.startsWith("deepseek-")) {
+    if (providerName.startsWith("SiliconFlow")) {
+      return [SILICONFLOW_SUMMARIZE_MODEL, ServiceProvider.SiliconFlow];
+    }
     return [DEEPSEEK_SUMMARIZE_MODEL, ServiceProvider.DeepSeek];
   }
 
